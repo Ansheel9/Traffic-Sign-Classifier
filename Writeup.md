@@ -16,7 +16,7 @@ Udacity Self-Driving Car Engineer Nanodegree
 <a name="sum"></a>
 ## Summary
 
-![](https://github.com/Ansheel9/P3-Collabration-Competition-DeepRL/blob/master/Images/plot.PNG)
+![](https://github.com/Ansheel9/Traffic-Sign-Classifier/blob/master/grayscale.jpg)
 
 In this project, we will use deep neural networks and convolutional neural networks to classify traffic signs. We will train and validate a model so it can classify traffic sign images using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). After the model is trained, you will then try out your model on images of German traffic signs that you find on the web.
 
@@ -51,6 +51,8 @@ signs data set:
 #### 2. Include an exploratory visualization of the dataset.
 
 Visualization of the dataset is done by a very simple basic approach is taken to display a single image from the dataset.
+
+![](https://github.com/Ansheel9/Traffic-Sign-Classifier/blob/master/grayscale.jpg)
 
 <a name="dis"></a>
 ### Design and Test a Model Architecture
