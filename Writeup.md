@@ -1,8 +1,3 @@
----
-title: 'Writeup'
-disqus: Ansheel Banthia
----
-
 Project 3 - Traffic Sign Classifier :warning: 
 ===
 
@@ -26,7 +21,7 @@ Udacity Self-Driving Car Engineer Nanodegree
 In this project, we will use deep neural networks and convolutional neural networks to classify traffic signs. We will train and validate a model so it can classify traffic sign images using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). After the model is trained, you will then try out your model on images of German traffic signs that you find on the web.
 
 The goals / steps of this project are the following:
-    * Load the data set
+* Load the data set
 * Explore, summarize and visualize the data set
 * Design, train and test a model architecture
 * Use the model to make predictions on new images
@@ -99,9 +94,9 @@ I used the same LeNet model architecture which consists of two convolutional lay
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* validation set accuracy of 0.934
+* validation set accuracy of 0.937
 
-I used normalized images to train the model and the number of EPOCHS=30 and the BATCH_SIZE=128. With the use of the defined hyperparameters, the validation set accuracy is 0.934 which is more than the 0.93 benchmark. EPOCHS and BATCH_SIZE are defined in cell and the normalization of the dataset is done in cell before. Moreover, the shuffling of the dataset is done. Further, the model has an accuracy of 0.6 on the five downloaded images of german traffic signs from the web.
+I used normalized images to train the model and the number of EPOCHS=30 and the BATCH_SIZE=128. With the use of the defined hyperparameters, the validation set accuracy is 0.937 which is more than the 0.93 benchmark. EPOCHS and BATCH_SIZE are defined in cell and the normalization of the dataset is done in cell before. Moreover, the shuffling of the dataset is done. Further, the model has an accuracy of 0.6 on the five downloaded images of german traffic signs from the web.
  
 
 <a name="bin"></a>
@@ -111,11 +106,11 @@ I used normalized images to train the model and the number of EPOCHS=30 and the 
 
  Here are Five German traffic signs that I found on the web:
 
-![test_1](https://user-images.githubusercontent.com/34116562/50350706-f3b3e680-0565-11e9-8535-89058319ac2b.jpeg)
-![test_2](https://user-images.githubusercontent.com/34116562/50350707-f4e51380-0565-11e9-912d-f55cb6f86225.jpeg)
-![test_3](https://user-images.githubusercontent.com/34116562/50350709-f6164080-0565-11e9-8fdd-9204a3b37552.jpeg)
-![test_4](https://user-images.githubusercontent.com/34116562/50350711-f7e00400-0565-11e9-8836-9678b74452a5.jpeg)
-![test_5](https://user-images.githubusercontent.com/34116562/50350713-f9a9c780-0565-11e9-8e98-a2ba70dd4478.jpeg)
+![test_1](https://github.com/Ansheel9/Traffic-Sign-Classifier/blob/master/data/traffic1.png)
+![test_2](https://github.com/Ansheel9/Traffic-Sign-Classifier/blob/master/data/traffic2.png)
+![test_3](https://github.com/Ansheel9/Traffic-Sign-Classifier/blob/master/data/traffic3.png)
+![test_4](https://github.com/Ansheel9/Traffic-Sign-Classifier/blob/master/data/traffic4.png)
+![test_5](https://github.com/Ansheel9/Traffic-Sign-Classifier/blob/master/data/traffic5.png)
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -123,11 +118,11 @@ Here are the results of the prediction on the eight german traffic signs:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Yield    		| Yield 									| 
-| Stop     			| Stop 										|
-| Stop					| Stop											|
-| Pedestrians	      		| Speed limit (50km/h)					 				|
-| Road Work			| Road Work 							|
+| Priority road    		| Priority road									| 
+| General caution     			| General caution 										|
+| Keep right				| Priority road												|
+| General caution	      		| General caution					 				|
+| Keep right			| Speed limit (60km/h) 							|
 
 The model was able to correctly guess 3 of the 5 traffic signs. Test Accuracy on new loaded images = 0.6.
 
@@ -139,51 +134,36 @@ The top five soft max probabilities were:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| 1        			| yield sign   									| 
-| 0     				| for any other sign 										|
+| 0.13296957       			| Priority road	  									|
 
-For the second and the third image, the model is sure that this is a stop sign (probability of 1), and the image do contain a stop sign. Hence, predicted correctly. The top five soft max probabilities were:
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| 1        			| stop sign   									| 
-| 0     				| for any other sign 										|
-
-For the fourth image, the model is sure that this is a Speed limit (50km/h) sign (probability of 1), and the image does not contain a Speed limit (50km/h) sign. Hence, not predicted correctly. The top five soft max probabilities were:
-
+For the second image, the model is sure that this is a General caution sign, and the image do contain a General caution sign. Hence, predicted correctly. The top five soft max probabilities were:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| 1        			| Speed limit (50km/h)   									| 
-| 0     				| for any other sign 										|
+| 0.13137311        			| General caution   									| 
 
-For the fifth image, the model is sure that this is a Road Work sign (probability of 1), and the image do contain a Road Work sign. Hence, predicted correctly. The top five soft max probabilities were:
+For the third image, the model is unsure that this is a correct sign (probability evenly distributed). Hence, not predicted correctly. The top five soft max probabilities were:
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| 1        			| Road Work   									| 
-| 0     				| for any other sign 										|
-
-For the sixth image, the model is sure that this is a yield sign (probability of 1), and the image do not contain a yield sign. Hence, not predicted correctly. The top five soft max probabilities were:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| 1        			| yield   									| 
-| 0     				| for any other sign 										|
+| 0.16518918        			| Priority road	   									| 
+| 0.12350544    				|  	Keep Right									|
 
-For the seventh image, the model is sure that this is a Bicycles crossing  sign (probability of 1), and the image do not contain a Bicycles crossing  sign. Hence, not predicted correctly. The top five soft max probabilities were:
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| 1        			| Bicycles crossing   									| 
-| 0     				| for any other sign 										|
-
-For the eight image, the model is sure that this is a No entry sign (probability of 1), and the image do contain a No entry sign. Hence, predicted correctly. The top five soft max probabilities were:
+For the fourth image, the model is sure that this is a Genral caution sign, and the image do contain a Genral caution sign. Hence, predicted correctly. The top five soft max probabilities were:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| 1        			| No entry   									| 
-| 0     				| for any other sign 										|
+| 0.18929006        			| Genral caution   									| 
+
+For the fifth image, the model is unsure of the correct sign (probability was evenly distributed). Hence, not predicted correctly. The top five soft max probabilities were:
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 0.16643417       			| Speed limit (60km/h)  									| 
+| 0.11010567     				| Speed limit (80km/h)										|
+
+
 
 
 <a name="short"></a>
